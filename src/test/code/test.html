@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.data demo</title>
+    <style>
+    div {
+        color: blue;
+    }
+
+    span {
+        color: red;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div>
+        The values stored were
+        <span></span> and
+        <span></span>
+    </div>
+    <font class="link1">点击</font>
+    <a class="link2" href="http://www.baidu.com" target="_black">sdfsdf</a>
+    <script>
+    $(document).ready(function() {
+        $('.link1').click(function() {
+            $('.link2').get(0).click();
+            console.log('ok');
+        });
+        $('.link2').click(function() {
+            $(this).css("color", "red");
+        });
+    });
+    var div = $("div")[0];
+    jQuery.data(div, "test", {
+        first: 16,
+        last: "pizza!"
+    });
+    $("span:first").text(jQuery.data(div, "test").first);
+    $("span:last").text(jQuery.data(div, "test").last);
+    /**
+     * [adf description]
+     * @Author   Yancy
+     * @DateTime 2016-06-08
+     * @param    {[type]}   a [description]
+     * @param    {[type]}   b [description]
+     * @return   {[type]}     [description]
+     */
+    function adf(a, b) {
+        return { sadf: "123213" }
+    }
+    </script>
+</body>
+
+</html>

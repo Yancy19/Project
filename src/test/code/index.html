@@ -1,0 +1,1014 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>报价清单单页</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+            font-weight: 400
+        }
+        
+        address,
+        cite,
+        dfn,
+        em,
+        var,
+        caption,
+        strong,
+        th,
+        i,
+        code,
+        kbd,
+        pre,
+        samp {
+            font-style: normal;
+            font-weight: 400
+        }
+        
+        ul,
+        ol {
+            list-style: none
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+        
+        th {
+            text-align: inherit
+        }
+        
+        caption,
+        th {
+            text-align: center
+        }
+        
+        a {
+            text-decoration: none;
+            color: #666
+        }
+        
+        a:hover {
+            text-decoration: none;
+            color: #d00
+        }
+        
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: ''
+        }
+        
+        .clearfix:after {
+            clear: both
+        }
+        
+        .clearfix {
+            content: "";
+            *zoom: 1
+        }
+        
+        q:before,
+        q:after {
+            content: ""
+        }
+        
+        .clear {
+            clear: both
+        }
+        
+        img {
+            border: none 0
+        }
+        
+        input {
+            _border: none;
+            outline: none
+        }
+        
+        body {
+            font-family: "Microsoft YaHei";
+        }
+        
+        .compute_bg {
+            background: #f9f7f5;
+            padding-bottom: 50px;
+        }
+        
+        .top_compute {
+            width: 1160px;
+            margin: 0 auto;
+        }
+        
+        .offer_main .offer_banner {
+            padding: 15px 0 40px;
+        }
+        
+        .offer_main .offer_banner_two {
+            padding: 15px 0 30px;
+        }
+        
+        .import_data h3 {
+            font-size: 30px;
+            color: #514a43;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .compute_area {
+            border: 1px solid #dfd5ba;
+            background: #fff;
+            height: 442px;
+        }
+        
+        .compute_area .import_data {
+            float: left;
+            width: 565px;
+            height: 442px;
+            border-right: 1px solid #f4f0e9;
+            position: relative;
+        }
+        
+        .compute_area .Z_get_info {
+            padding-left: 60px;
+            margin-top: 35px;
+        }
+        
+        .compute_area .import_data p {
+            font-size: 14px;
+            color: #999;
+            text-align: center;
+        }
+        
+        .compute_area .import_data p em {
+            padding: 0 3px;
+            color: #ff3300;
+        }
+        
+        .input_line {
+            margin-top: 15px;
+        }
+        
+        .input_line label {
+            float: left;
+            display: block;
+            width: 110px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #514a43;
+        }
+        
+        .input_line label i {
+            color: #f26122;
+        }
+        
+        .input_line .abreast_input {
+            float: left;
+            font-size: 14px;
+            width: 260px;
+        }
+        
+        .input_line .abreast_input .row1 {
+            position: relative;
+        }
+        
+        .input_line .abreast_input .row1 i {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            color: #514a43;
+            line-height: 40px;
+        }
+        
+        .abreast_input input {
+            display: block;
+            width: 248px;
+            height: 38px;
+            line-height: 38px;
+            border: 1px solid #dfd5ba;
+        }
+        
+        .abreast_input input:focus {
+            border-color: #f26122;
+        }
+        
+        .abreast_input input,
+        .abreast_input .pull_down span {
+            padding-left: 10px;
+            font-size: 14px;
+            color: #b3a694;
+        }
+        
+        .abreast_input.peculiar input,
+        .abreast_input.peculiar .pull_down span {
+            color: #666;
+        }
+        
+        .abreast_input .pull_down .city_save_txt,
+        .abreast_input .pull_down .city_town_txt {
+            display: block;
+            max-width: 90px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .abreast_input .row2,
+        .abreast_input .row3 {
+            float: left;
+            height: 38px;
+            line-height: 38px;
+            border: 1px solid #dfd5ba;
+        }
+        
+        .abreast_input .row1 {
+            width: 258px;
+        }
+        
+        .abreast_input .row2 {
+            width: 123px;
+        }
+        
+        .abreast_input .row3 {
+            width: 78px;
+            margin-bottom: 15px;
+        }
+        
+        .abreast_input .mar0 {
+            margin-right: 10px;
+        }
+        
+        .abreast_input em {
+            display: block;
+            width: 8px;
+            height: 5px;
+            background: url("../images/arrows_ico.png") no-repeat;
+            position: absolute;
+            right: 10px;
+            top: 17px;
+        }
+        
+        .import_data .baojia_btn {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #f4f0e9;
+            position: absolute;
+            right: -75px;
+            top: 148px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        
+        .baojia_btn .inner {
+            width: 98px;
+            height: 98px;
+            background: #f5f1eb;
+            border-radius: 50%;
+            margin: 14px;
+            padding: 12px;
+        }
+        
+        .baojia_btn .inner a {
+            display: block;
+            width: 44px;
+            height: 44px;
+            line-height: 22px;
+            padding: 27px;
+            background: #f26122;
+            border-radius: 50%;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .baojia_btn .inner a:hover {
+            background: #ea5000;
+        }
+        
+        .compute_area .compute_succ {
+            float: left;
+            width: 483px;
+            padding: 57px 21px 0 88px;
+            text-align: center;
+        }
+        
+        .compute_succ h4 {
+            color: #b3a694;
+            font-size: 18px;
+            padding-bottom: 8px;
+        }
+        
+        .compute_succ h4 .succ_price {
+            color: #f26122;
+            font-size: 36px;
+            padding: 0 10px;
+            font-family: arial;
+        }
+        
+        .compute_succ .results_suggest {
+            color: #b3a694;
+            font-size: 12px;
+            line-height: 30px;
+        }
+        
+        .compute_succ ul {
+            padding: 0 15px;
+        }
+        
+        .compute_succ li {
+            width: 458px;
+            height: 50px;
+            line-height: 50px;
+            background: url("../images/row_bg.jpg") no-repeat;
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        
+        .compute_succ li em {
+            float: left;
+            width: 90px;
+            color: #be9954;
+            text-align: center;
+        }
+        
+        .compute_succ li i {
+            font-size: 20px;
+            color: #be9954;
+        }
+        
+        .compute_succ li span {
+            float: left;
+            display: block;
+            color: #666;
+        }
+        
+        .compute_succ li span.Z_centre {
+            width: 230px;
+            padding-left: 20px;
+        }
+        
+        .compute_succ li span.Z_ri {
+            width: 115px;
+            text-align: center;
+        }
+        
+        .compute_succ a {
+            display: block;
+            height: 40px;
+            width: 200px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 16px;
+            background: #be9954;
+            text-align: center;
+            margin: 22px auto 0;
+        }
+        
+        .compute_succ a:hover {
+            background: #b08a44;
+        }
+        
+        .compute_succ a em {
+            display: inline-block;
+            width: 12px;
+            height: 7px;
+            background: url("../images/arrows_ico.png") no-repeat -9px 0;
+            margin-left: 5px;
+        }
+        
+        .abreast_input .pull_down {
+            position: relative;
+            cursor: pointer;
+            background: #fff;
+        }
+        
+        .abreast_input .pull_down .drop_ul {
+            background: #fff;
+        }
+        
+        .abreast_input .pull_down ul {
+            display: none;
+            width: 100%;
+            max-height: 180px;
+            overflow: auto;
+            position: absolute;
+            top: 38px;
+            left: -1px;
+            background: #fff;
+            color: #666;
+            border: 1px solid #dfd5ba;
+            z-index: 2;
+        }
+        
+        .abreast_input .pull_down li a {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .abreast_input .pull_down ul a:hover {
+            background: #f9f7f5;
+            color: #f26122;
+        }
+        
+        .abreast_input .pull_down.on ul {
+            display: block;
+        }
+        
+        .err_tips {
+            height: 30px;
+            line-height: 30px;
+            color: #f26122;
+            font-size: 12px;
+            padding-left: 110px;
+        }
+        
+        .err_tips .iconfont {
+            font-size: 16px;
+            margin-right: 5px;
+        }
+        
+        .core_main {
+            width: 1160px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+        
+        .core_main .core_tab {
+            height: 80px;
+            margin-bottom: 30px;
+        }
+        
+        .core_main .core_tab li {
+            float: left;
+            width: 100%;
+            font-size: 24px;
+            padding: 18px 0px;
+            text-align: center;
+            cursor: pointer;
+            background: #f2f2f2;
+            color: #4c4c4c;
+        }
+        
+        .core_tab li em {
+            font-size: 30px;
+        }
+        
+        .core_tab li.active {
+            background: #ab9a7d;
+            color: #fff;
+            position: relative;
+        }
+        
+        .core_tab li a {
+            color: #4e4e4e;
+        }
+        
+        .core_tab li.active a {
+            color: #fff;
+        }
+        
+        .core_tab li.active::after {
+            width: 0px;
+            height: 0px;
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            margin-left: -11px;
+            border-width: 10px 10px;
+            border-style: solid dashed dashed dashed;
+            border-color: #ab9a7d transparent transparent transparent;
+        }
+        
+        .calcul_item tr {
+            border: 1px solid #e5e5e5;
+            font-size: 14px;
+        }
+        
+        .exclusive th {
+            border: 1px solid #e5e5e5;
+            background: #f8f8f8;
+            font-size: 16px;
+        }
+        
+        .calcul_table .calcul_th {
+            margin-bottom: 10px;
+        }
+        
+        .calcul_table .calcul_item {
+            margin-bottom: 6px;
+        }
+        
+        .calcul_table .calcul_th th {
+            padding: 20px 0px;
+            border: 1px solid #dfdfdf;
+            font-size: 16px;
+            background: #f8f8f8;
+        }
+        
+        .calcul_item td,
+        .calcul_item th {
+            padding: 20px 0px;
+            border: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        
+        .calcul_item a.price {
+            color: #f26122;
+        }
+        
+        .calcul_item td {
+            padding: 20px 15px;
+        }
+        
+        .calcul_item table thead {
+            background: #fafafa;
+        }
+        
+        .calcul_item .textalign {
+            text-align: left;
+        }
+        
+        .calcul_item h3 {
+            position: relative;
+            padding: 15px 0px;
+            cursor: pointer;
+            background: #f7f5f0;
+        }
+        
+        .calcul_item h3 span {
+            display: inline-block;
+            font-size: 18px;
+            color: #514a43;
+        }
+        
+        .calcul_item h3 .green {
+            padding-left: 75px;
+        }
+        
+        .calcul_item h3 .yellow {
+            position: absolute;
+            left: 208px;
+        }
+        
+        .calcul_item h3 .yellow em {
+            color: #f26122;
+        }
+        
+        .calcul_item h3 a {
+            display: block;
+            width: 22px;
+            height: 22px;
+            position: absolute;
+            right: 22px;
+            top: 20px;
+            background: url("http://fastued3.jia.com/image/zhuangxiu/finish_baojia/arrows_ico.png") 0 -31px;
+        }
+        
+        .calcul_item h3 a.add {
+            background-position: 0 -9px;
+        }
+        
+        .second_level .zx_firm {
+            margin: 20px auto 0px;
+        }
+        
+        .calcul_item .tab_slide {
+            margin-top: 1px;
+        }
+        
+        .calcul_item .tab_slide p {
+            font-size: 16px;
+            color: #514a43;
+            padding: 15px 0;
+        }
+        
+        .tab_slide p a {
+            color: #007ff5;
+            text-decoration: underline;
+        }
+        
+        .Jia_obtain_btn {
+            display: none;
+            width: 150px;
+            margin: 0 auto;
+            height: 40px;
+            background: #fe6968;
+            line-height: 40px;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 4px;
+            font-family: "Microsoft YaHei";
+            position: absolute;
+            top: 14px;
+            right: 20px;
+        }
+        
+        .Jia_obtain_btn:hover {
+            background: #e7505a;
+        }
+        
+        .select {
+            height: 40px;
+            width: 258px;
+            border: solid 1px #DFD5BA;
+            font-size: 14px;
+            color: #757575;
+            padding-left: 6px;
+            /*#b3a694;*/
+        }
+        
+        .select>option {
+            height: 30px;
+            width: 250px;
+            border: 0px;
+        }
+    </style>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script> -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+</head>
+
+<body>
+    <div class="offer_main">
+        <div class="compute_bg">
+            <div class="top_compute">
+                <div class="offer_banner" style>
+                    <!-- <img src="offer_banner.jpg"> -->
+                </div>
+                <!-- <h3>填面积 免费快速报价</h3> -->
+                <div class="compute_area">
+                    <div class="import_data">
+                        <h3>填面积 免费快速报价</h3>
+                        <p>今天已有<em class="day_number">34356</em>位业主免费获得装修预算</p>
+                        <div class="Z_get_info">
+                            <div class="input_line clearfix">
+                                <label>姓<span style="visibility:hidden;">你好</span>名：<i>*</i></label>
+                                <div class="abreast_input">
+                                    <div class="row1">
+                                        <input type="text" autocomplete="off" class="Jia_area_input" placeholder="请输入姓名" id="name" name="name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_line clearfix">
+                                <label>手机号码：<i>*</i></label>
+                                <div class="abreast_input">
+                                    <div class="row1">
+                                        <input type="text " autocomplete="off" onkeyup="this.value=this.value.replace(/\D+/g,'')" maxlength="11" onblur="if(this.value=='')this.value=this.defaultValue" onfocus="if(this.value==this.defaultValue)this.value=''" placeholder="请输入手机号码" id="mobile"
+                                            name="mobile">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_line clearfix">
+                                <label>户<span style="visibility:hidden;">你好</span>型：<i>*</i></label>
+                                <div class="abreast_input">
+                                    <div class="row1">
+                                        <select id="type" class="select">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_line clearfix">
+                                <label>房屋面积：<i>*</i></label>
+                                <div class="abreast_input">
+                                    <div class="row1">
+                                        <input type="text" autocomplete="off" onkeyup="this.value=this.value.replace(/\D+/g,'')" class="Jia_area_input" onblur="if(this.value=='')this.value=this.defaultValue" placeholder="请输入房屋面积" id="area" name="area">
+                                        <i>m²</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="err_tips"></div>
+                        </div>
+                        <div class="baojia_btn">
+                            <div class="inner">
+                                <a href="javascript:;" class="Calculate_quotation" id="Calculate_quotation_btn">计算报价</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="compute_succ">
+                        <h4>您的装修预算是<span class="succ_price">？</span>元</h4>
+                        <div class="Z_get_info">
+                            <div class="input_line clearfix">
+                                <label>喜欢的风格：</label>
+                                <div class="abreast_input">
+                                    <div class="abreast_input">
+                                        <div class="row1">
+                                            <select id="style" class="select">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_line clearfix">
+                                <label>小区名称：<i>*</i></label>
+                                <div class="abreast_input">
+                                    <div class="row1">
+                                        <input type="text" autocomplete="off" class="Jia_area_input" placeholder="请输入小区名称" id="communityName" name="communityName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input_line clearfix">
+                                <label>预期花费：<i>*</i></label>
+                                <div class="abreast_input">
+                                    <div class="row1">
+                                        <input type="text" autocomplete="off" onkeyup="this.value=this.value.replace(/\D+/g,'')" class="Jia_area_input" onblur="if(this.value=='')this.value=this.defaultValue" placeholder="请输入预期花费" id="budget" name="budget">
+                                        <i>万元</i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="err_tips"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--compute_bg end-->
+        <div style="display:none" class="layer_shade"></div>
+        <div class="core_main" id="core_main">
+            <div class="core_tab">
+                <ul class="clearfix">
+                    <li class="active">
+                        <a href="javascript:;" tjjj="banbao_list">报价清单</a>
+                        <a href="javascript:;" class="Jia_obtain_btn" tjjj="Jia.index.applyBtn">编辑报价单</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="core_slide">
+                <ul>
+                    <li style="display: list-item;">
+                        <div class="calcul_table">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- <script type="text/javascript" src="jquery.min.js"></script> -->
+    <script type="text/javascript">
+        $(function() {
+            // var baseUrl='http://localhost:8017';
+            // var apiUrl='http://localhost:8018';
+            //写死
+            var baseUrl = 'http://www.upp188.com';
+            var apiUrl = 'http://123.57.153.14:8089';
+            var shopId = '10011';
+            var houseType = ['一室一厅一卫', '两室一厅一卫', '两室一厅室卫', '两室两厅一卫', '两室两厅两卫', '三室一厅一卫', '三室一厅两卫', '三室两厅一卫',
+                '三室两厅两卫', '四室一厅一卫', '四室一厅两卫', '四室两厅一卫', '四室两厅两卫', '四室三厅一卫', '四室三厅两卫'
+            ];
+            $('#type').html('');
+            for (var i = 0; i < houseType.length; i++) {
+                $('#type').append('<option value="' + (i + 1) + '">' + houseType[i] + '</option>');
+            };
+            //获取装修风格
+            $('#style').html('<option value="">请选择</option>');
+            $.ajax({
+                type: "GET",
+                url: apiUrl + "/api/web/Quotation/GetStyles?shopId=" + shopId,
+                dataType: "json",
+                success: function(result) {
+                    if (result.success) {
+                        console.log(result.data);
+                        result.data.map(item => {
+                            $('#style').append('<option value="' + item + '">' + item +
+                                '</option>');
+                        })
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+            // 计算报价
+            $('#Calculate_quotation_btn').on('click', function() {
+                var verify = true;
+                var name = $('#name').val();
+                var mobile = $('#mobile').val();
+                var type = $('#type').val();
+                var area = $('#area').val();
+                var style = $('#style').val();
+                var communityName = $('#communityName').val();
+                var budget = $('#budget').val();
+                // var reg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+                var reg = /^1[34578]\d{9}$/;
+                if (!name) {
+                    verify = false;
+                    $('#name').focus();
+                    return verify;
+                }
+                if (!mobile || !reg.test(mobile)) {
+                    verify = false;
+                    $('#mobile').focus();
+                    return verify;
+                }
+                /*if(!type){
+                    verify=false;
+                    $('#type').focus();
+                    return verify;
+                }*/
+                if (!area) {
+                    verify = false;
+                    $('#area').focus();
+                    return verify;
+                }
+                /* if(!style){
+                    verify=false;
+                    $('#style').focus();
+                    return verify;
+                }*/
+                if (!communityName) {
+                    verify = false;
+                    $('#communityName').focus();
+                    return verify;
+                }
+                if (!budget) {
+                    verify = false;
+                    $('#budget').focus();
+                    return verify;
+                }
+                if (verify) {
+                    $.ajax({
+                        type: "GET",
+                        url: apiUrl + "/api/web/Quotation/GetQuotations",
+                        data: "shopId=" + shopId + "&style=" + style + "&type=" + type +
+                            "&area=" + area + "&price=" + budget,
+                        dataType: "json",
+                        success: function(result) {
+                            if (result.success) {
+                                console.log(result.data);
+                                if (result.data) {
+                                    $('.Jia_obtain_btn').css('display', 'block');
+                                    $('.calcul_table:first').html('');
+                                    var itemArr = [];
+                                    var budgetTotal = 0.00;
+                                    var quotationTemplateId;
+                                    result.data.map(item => {
+                                        budgetTotal += item.TotalAmount;
+                                        if (item.Categorys.length > 0) {
+                                            var trHtml = '';
+                                            item.Categorys.map(citem => {
+                                                var rowspanLength = citem.QuotationTemplateItem
+                                                    .length;
+                                                var tdHtml = '';
+                                                var index = 0;
+                                                citem.QuotationTemplateItem
+                                                    .map(qtitem => {
+                                                        quotationTemplateId
+                                                            = citem.QuotationTemplateItem[
+                                                                index].QuotationTempalteId;
+                                                        //写死
+                                                        var aHref =
+                                                            'http://www.upp188.com:80/invitecard?shopid=10011&mshopid=10010&type=member&refid=10014&reftype=1&returnUrl=' +
+                                                            baseUrl +
+                                                            '/Quotation?template=' +
+                                                            quotationTemplateId;
+                                                        if (index == 0) {
+                                                            if (
+                                                                quotationTemplateId
+                                                            ) {
+                                                                // $('.Jia_obtain_btn').attr('href',baseUrl+'/invitecard?shopid=1&mshopid=1&type=member&refid=8&reftype=1&returnUrl='+baseUrl+'/Quotation?template='+quotationTemplateId);
+                                                                $(
+                                                                    '.Jia_obtain_btn'
+                                                                ).attr(
+                                                                    'href',
+                                                                    aHref
+                                                                );
+                                                            }
+                                                            tdHtml = [
+                                                                '<td rowspan="' +
+                                                                rowspanLength +
+                                                                '">',
+                                                                // '<img src="./上海装修预算计算器,装修预算报价表-齐家装修网_files/table_05.png">',
+                                                                '<p>' +
+                                                                citem
+                                                                .CategoryName +
+                                                                '</p>',
+                                                                '</td>'
+                                                            ].join(
+                                                                '');
+                                                        } else {
+                                                            tdHtml = '';
+                                                        };
+                                                        var priceSpan =
+                                                            '<a class="price" href="' +
+                                                            aHref +
+                                                            '">¥' +
+                                                            citem.QuotationTemplateItem[
+                                                                index].Price +
+                                                            '元</a>';
+                                                        if (citem.QuotationTemplateItem[
+                                                                index].Type !=
+                                                            1) {
+                                                            priceSpan =
+                                                                '<a class="price" href="' +
+                                                                aHref +
+                                                                '">到店商议</a>';
+                                                        }
+                                                        var tr = [
+                                                            '<tr>' +
+                                                            tdHtml +
+                                                            '<td class="textalign">' +
+                                                            citem.QuotationTemplateItem[
+                                                                index
+                                                            ].ProductName +
+                                                            '</td>',
+                                                            '<td>' +
+                                                            citem.QuotationTemplateItem[
+                                                                index
+                                                            ].Quantity +
+                                                            '</td>',
+                                                            '<td>' +
+                                                            priceSpan +
+                                                            '</td>',
+                                                            '</tr>'
+                                                        ].join('');
+                                                        index++;
+                                                        trHtml += tr;
+                                                    })
+                                            });
+                                        };
+                                        var itemHtml = ['<div class="calcul_item">',
+                                            '<h3><span class="green">' + item.RoomName +
+                                            '</span><span class="yellow">预算：<em>' +
+                                            item.TotalAmount + '</em>元</span>',
+                                            '<a href="javascript:;" class="" tjjj="zhuwo_zk"></a></h3>',
+                                            '<div class="tab_slide" style="display: none;">',
+                                            '<table>',
+                                            '<colgroup>',
+                                            '<col width="175">',
+                                            '<col width="500">',
+                                            '<col width="200">',
+                                            '<col width="300">',
+                                            '</colgroup>',
+                                            '<thead>',
+                                            '<tr>',
+                                            '<th>分类</th>',
+                                            '<th>名称</th>',
+                                            '<th>数量</th>',
+                                            '<th>单价</th>',
+                                            '</tr>',
+                                            '</thead>',
+                                            '<tbody>' + trHtml + '</tbody>',
+                                            '</table>',
+                                            '</div>',
+                                            '</div>'
+                                        ].join('');
+                                        itemArr.push(itemHtml);
+                                    });
+                                    //显示报价单总价
+                                    $('.succ_price').text(budgetTotal);
+                                    $('.calcul_table:first').append(itemArr.join(''));
+                                    //绑定收拉事件
+                                    $('.calcul_item > h3 > a').each(function(index, dom) {
+                                        //dom=this
+                                        $(dom).on('click', function(event) {
+                                            if (this.className) {
+                                                $(this).removeClass('add');
+                                                $(this).parent().next().css(
+                                                    'display', 'none');
+                                            } else {
+                                                $(this).addClass('add');
+                                                $(this).parent().next().css(
+                                                    'display', 'block');
+                                            }
+                                        })
+                                    })
+                                } else {
+                                    $('.succ_price').text('？');
+                                    $('.Jia_obtain_btn').css('display', 'none');
+                                    $('.calcul_table:first').html(
+                                        '<h3 style="text-align: center;color: red;">没有找到符合条件的报价单！</h3>'
+                                    );
+                                }
+                            }
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+.doubleSwallow .main,
+.doubleSwallow .left,
+.doubleSwallow .right {
+    float: left;
+    height: 30px;
+}
+
+.doubleSwallow .main {
+    width: 100%;
+    background: red;
+}
+
+.doubleSwallow .main .inner {
+    margin: 0px 25%;
+}
+
+.doubleSwallow .left {
+    width: 25%;
+    margin-left: -100%;
+    background: yellow;
+}
+
+.doubleSwallow .right {
+    width: 25%;
+    margin-left: -25%;
+    background: yellow;
+}
+
+.holyGrail .left,
+.holyGrail .middle,
+.holyGrail .right {
+    position: relative;
+    float: left;
+    min-height: 130px;
+}
+
+.holyGrail {
+    padding: 0 220px 0 200px;
+    overflow: hidden;
+}
+
+.holyGrail .left {
+    margin-left: -100%;
+    left: -200px;
+    width: 200px;
+    background: red;
+}
+
+.holyGrail .right {
+    margin-left: -220px;
+    right: -220px;
+    width: 220px;
+    background: green;
+}
+
+.holyGrail .middle {
+    width: 100%;
+    background: blue;
+    word-break: break-all;
+}
+</style>
+
+<body>
+    <div class="doubleSwallow">
+        <div class="main">
+            <div class="inner">main</div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="holyGrail">
+        <div class="middle">
+            <h4>middle</h4>
+        </div>
+        <div class="left">
+            <h4>left</h4>
+        </div>
+        <div class="right">
+            <h4>right</h4>
+        </div>
+    </div>
+</body>
+
+</html>

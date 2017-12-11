@@ -1,0 +1,55 @@
+<!DOCTYPE html>  
+<html ng-app>  
+<head>  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>  
+<meta charset=utf-8 />  
+<title>JS Bin</title>  
+</head>  
+<body  ng-controller="MySelectCtrl">  
+  普通Select：  
+  <select ng-model="select" ng-options="m.ProductName for m in Model">  
+    <option value="">----请选择----</option>  
+  </select>  
+  <br/>  
+  拼接Select  
+  <select ng-model="Select2" ng-options="(m.MainCategory+'-'+m.ProductName) for m in Model">  
+    <option value="">---请选择---</option>  
+  </select>  
+  <br/>  
+  分组Select  
+  <select ng-model='Select3' ng-options="(m.ProductColor+'-'+m.ProductName) group by m.MainCategory for m in Model">  
+    <option value="">---请选择---</option>  
+  </select>  
+  <br />  
+  自定义select  
+  <select ng-model="select4" ng-options="m.id as m.ProductName for m in Model">  
+    <option value="">---请选择---</option>  
+  </select>  
+  <label>{{select4}}</label>  
+  <script type="text/javascript">
+    function MySelectCtrl($scope)  
+      {  
+        $scope.Model=[  
+          {  
+            id:10001,  
+            MainCategory:'男',  
+            ProductName:'衬衫',  
+            ProductColor:'白'  
+          },  
+          {  
+            id:10002,  
+            MainCategory:'女',  
+            ProductName:'T恤',  
+            ProductColor:'红'  
+          },  
+          {  
+            id:10003,  
+            MainCategory:'女',  
+            ProductName:'裙子',  
+            ProductColor:'蓝'  
+          }  
+        ];  
+      }
+  </script>
+</body>  
+</html> 
