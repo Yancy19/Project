@@ -1,0 +1,5 @@
+"ping ip -t" 拼ip地址
+"mkdir js" —在当前目录下创建js文件夹
+"echo.>app.js" —在当前目录下创建app.js文件
+"dir" 查看当前文件目录
+"ctr+c" 停止 ping ip -t

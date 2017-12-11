@@ -1,0 +1,4 @@
+更新字段值
+update [UVW_VendorSKUs] set [Stock]=1 where stock=0
+添加新列
+alter table [uvw_ydt_0613].[dbo].[UVW_ActivityPrizes] add PrizeType tinyint not null default 1

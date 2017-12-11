@@ -1,0 +1,4 @@
+代碼整洁:shift+alt+f  (Beautify)
+浏览查看html文件:ctrl+f1  (View In Browser)
+代码注释: Ctrl+Alt+D+D  (Document This)
+运行选中的代码:Ctrl+Alt+N  (Code Runner)

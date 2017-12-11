@@ -1,0 +1,4 @@
+code first 指令:
+Update-Database   >>更新数据库
+Add-Migration Add_Table    >>添加一个名为“Add_Table”的迁移文件
+Update-Database -TargetMigration:Add_Table   >>执行指定的迁移文件

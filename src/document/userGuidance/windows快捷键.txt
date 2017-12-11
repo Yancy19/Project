@@ -1,0 +1,7 @@
+windows+方向键 》
+windows+r  》打开运行
+	直接输入cmd里的命令
+	cmd  》打开cmd
+	mstsc 》打开远程管理
+	\\ip  》访问电脑的共享文件
+	

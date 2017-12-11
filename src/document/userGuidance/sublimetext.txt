@@ -1,0 +1,10 @@
+ctrl+alt+f 格式化html代码
+ctrl+alt+a 代码对其
+ColorPicker  ctrl+shift+c 打开颜色选择器
+HTML-CSS-JS Prettify  ctrl+shift+h 代码规范
+ctrl+alt+s 删除多余的空格
+DocBlockr  /** +tab/enter  代码注释
+
+编译es6 >>安装babel,(版本小于6)
+
+

@@ -1,0 +1,4 @@
+npm config set prefix "目录路径"   设置全局安装路径。 
+npm config get prefix  查看全局安装路径(npm i XXX -g)
+ C:\Users\Yancy\AppData\Roaming\npm
+npm list -g --depth 0 查看全局安装
